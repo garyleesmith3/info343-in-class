@@ -41,6 +41,10 @@ console.group("PRACTICE: Variables and Basic Types");
 //Create another variable named `y`, assign it the value
 //currently held in the variable `x`, and write the value
 //of `y` to the console log
+var y = x;
+y = 10;
+console.log(x);
+console.log(y);
 
 
 //now assign `y` the numeric value 10
@@ -78,12 +82,16 @@ console.group("PRACTICE: Strings");
 //with some text, and then create another string `s4`
 //and assign it the concatenation of `s2` and `s3`
 //then write it to the console so you can verify it worked.
+var s2 = " trim me 1!";
+var s3 = "trim me 2! ";
+
 
 
 //use the `.trim()` method to remove the leading and
 //trailing white space from this string
 var withSpaces = "    trim those spaces!     ";
-
+console.log(s2.trim());
+console.log(s3.trim());
 
 console.groupEnd();
 
@@ -158,7 +166,13 @@ console.group("PRACTICE: Objects");
 //now try adding a property named `web site` (with a space)
 //setting it to some string value...it's tricky...
 
+var course2 = {
+    name: "Design",
+    priority: "2",
 
+}
+
+console.log("hello! ", course2);
 
 
 console.groupEnd();
@@ -199,6 +213,9 @@ console.group("PRACTICE: Arrays");
 //create another array of playing card suits
 //(clubs, diamonds, hearts, spades)
 
+var suits = ["Clubs", "Diamonds", "Hearts", "Spades"];
+suits.push("jokers");
+console.log(suits[suits.length-1]);
 
 //then add a new element named "jokers"
 //afer adding it, access it in the array
@@ -287,6 +304,7 @@ console.groupCollapsed("Functions");
 function reverseString(s) {
     var reversed = "";
     var idx;
+    s = String(s);
     for (idx = s.length-1; idx >= 0; idx--) {
         //short form of reversed = reversed + s.charAt(idx)
         reversed += s.charAt(idx);
@@ -354,6 +372,21 @@ console.groupCollapsed("Functional Programming");
 //a different style. Instead of Object-Oriented Programming
 //we can do Functional Programming.
 
+var coisa = function(a, b) {
+
+    if (b > a) {
+        return a;
+    } else if (a > b) {
+        return b;
+    } else {
+        return a;
+    }
+
+}
+
+console.log(coisa(8, 42));
+
+
 //Take the for loop for example. It actually does two things:
 //iterate over the array elements, and execute some code
 //for each iteration. In functional programming, we separate
@@ -417,6 +450,23 @@ function generateRandomNumbers(howMany, minimum, maximum) {
 }
 
 //>>> your code goes here!
+
+var firstArray = generateRandomNumbers(100, 1, 100);
+console.log(firstArray);
+
+firstArray.map();
+
+firstArray.forEach(add100);
+// firstArray.forEach(function (elem) {
+//    console.log(a + 100);
+// }); 
+
+var add100 = function(a) {
+//    return a + 100;
+   console.log(a + 100);
+}
+
+
 
 
 //now use the .sort() method on a generated array of random
