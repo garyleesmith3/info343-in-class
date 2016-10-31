@@ -110,6 +110,9 @@ logValue("2016-10-27", formatAsDate);
 var someNumber = 123456789;
 //logValue(...)
 
+logValue(someNumber, formatAsCurrency);
+logValue(someNumber, formatAsString);
+logValue(someNumber, formatAsNumber);
 
 
 
@@ -350,6 +353,12 @@ console.log("Total count", formatAsNumber(totalCount));
  * a comma, delimited list. To sort descending,
  * just reverse the logic in your compare function.
  */
+
+function compareMales(rec1, rec2) {
+    return -(rec1.count - rec2.count);
+}
+
+var newMales = males.sort();
 
 
 
